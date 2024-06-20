@@ -5,10 +5,7 @@ FROM node:12
 WORKDIR /app
 
 # Copy package.json and package-lock.json to the working directory
-COPY ./src/package*.json ./
-
-# Copy src to the working directory
-COPY ./src/src ./
+COPY package*.json ./
 
 
 # Install any needed packages specified in package.json
@@ -19,5 +16,5 @@ RUN npm install
 EXPOSE 8080
 
 # Define the command to run the app mode dev
-#CMD ["npm", "run", "dev"]
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
+#CMD ["npm", "start"]
